@@ -1,4 +1,5 @@
 ﻿using PruebaGit.Datos;
+using PruebaGit.Entidades;
 
 namespace PruebaGit.Servicios
 {
@@ -9,6 +10,16 @@ namespace PruebaGit.Servicios
         {
             personaRepositorio = new PersonaRepositorio();
         }
+
+     
+
+        public void AgregarPersona(int id, string nombre, string apellido)
+        {
+            Persona nuevaPersona = new Persona { Id = id, Nombre = nombre, Apellido = apellido };
+            personaRepositorio.AgregarPersona(nuevaPersona);
+        }
+
+       
 
     }
 }
