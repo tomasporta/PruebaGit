@@ -18,8 +18,20 @@ namespace PruebaGit.Servicios
             Persona nuevaPersona = new Persona { Id = id, Nombre = nombre, Apellido = apellido };
             personaRepositorio.AgregarPersona(nuevaPersona);
         }
+        public void EliminarPersona(int id)
+        {
+            try
+            {
+                personaRepositorio.EliminarPersona(id);
+                Console.WriteLine(" Persona eliminada correctamente!");
+            }
+            catch (InvalidOperationException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
 
-       
+
 
     }
 }
