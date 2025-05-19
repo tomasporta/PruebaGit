@@ -39,7 +39,14 @@ namespace PruebaGit.Datos
                 Console.WriteLine(persona);
             }
         }
-       
+        public void EliminarPersona(int id)
+        {
+            Persona persona = personas.FirstOrDefault(p => p.Id == id); ;
+            if (persona != null) { personas.Remove(persona); }
+            else throw new InvalidOperationException("Persona no encontrado");
+
+        }
+
 
         public List<Persona> ObtenerPersonas()
         {
